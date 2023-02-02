@@ -10,7 +10,7 @@ import pandas as pd
 
 from PIL import Image
 
-#image = Image.open('C:/Users/kenny/Dropbox/Soccermatics/Project_code/Griezmann_project/WC2022logo.jpg') 
+image = Image.open('WC2022logo.jpg') 
 
 # Open parser
 parser = Sbopen(dataframe=True)
@@ -37,7 +37,7 @@ match_descriptions = [row['home_team_name'] + " v " + row['away_team_name'] + " 
 # print(unique_teams)
 
 # Create a sidebar
-#st.sidebar.image(image, use_column_width=True)
+st.sidebar.image(image, use_column_width=True)
 
 st.sidebar.title("World Cup 2022 Analysis")
 
