@@ -1,5 +1,6 @@
 ### STREAMLIT APP FOR GRIEZMANN PROJECT
 
+import matplotlib
 from matplotlib.colors import LinearSegmentedColormap
 import matplotlib.pyplot as plt
 from mplsoccer import Pitch, VerticalPitch, Sbopen
