@@ -23,6 +23,7 @@ match_descriptions = [row['home_team_name'] + " v " + row['away_team_name'] + " 
 # Create a sidebar
 st.sidebar.image(image, use_column_width=True)
 st.sidebar.title("World Cup 2022 Analysis")
+st.sidebar.markdown("Learning how to use Python & Streamlit")
 
 match_selected = st.sidebar.selectbox('Select Match', match_descriptions)
 
