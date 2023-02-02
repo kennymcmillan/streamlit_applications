@@ -3,13 +3,10 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
-
 from mplsoccer import Pitch, VerticalPitch, Sbopen
 import pandas as pd
 
-
 from PIL import Image
-
 image = Image.open('WC2022logo.jpg') 
 
 # Open parser
@@ -23,24 +20,9 @@ df_2022 = parser.match(43, 106)
 
 match_descriptions = [row['home_team_name'] + " v " + row['away_team_name'] + " : " + row['competition_stage_name'] for index, row in df_2022.iterrows()]
 
-#df_2022_matchid_list = df_2022['match_id'].unique().tolist()
-
-#data_WC2022 = [parser.event(match) for match in df_2022_matchid_list]
-#events_WC2022 = pd.concat(list(zip(*data_WC2022))[0], ignore_index=True)
-# positions_WC2022 = pd.concat(list(zip(*data_WC2022))[3], ignore_index=True)
-
-# all_home_teams = events_WC2022['home_team_name']
-# all_away_teams = events_WC2022['away_team_name']
-# #remove duplicates and sort alphabetically
-# unique_teams = sorted(list(set(all_teams)))
-
-# print(unique_teams)
-
 # Create a sidebar
 st.sidebar.image(image, use_column_width=True)
-
 st.sidebar.title("World Cup 2022 Analysis")
-
 
 match_selected = st.sidebar.selectbox('Select Match', match_descriptions)
 
@@ -53,8 +35,6 @@ df_2022['match_bool'] = (df_2022['home_team_name'].str.contains(home_team)) & (d
 # Get the match_id for the corresponding row
 match_id_selected = df_2022.loc[df_2022['match_bool'] == True, 'match_id'].values[0]
 comp_id_selected = df_2022.loc[df_2022['match_bool'] == True, 'competition_id'].values[0]
-
-st.sidebar.write("Match ID is " + str(match_id_selected))
 
 parser = Sbopen()
 df = parser.event(match_id_selected)[0] 
@@ -111,4 +91,4 @@ with tab2:
     st.title("All passes by " + player_selected)
     st.pyplot(figure_two)         
 
-          
+         
