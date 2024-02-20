@@ -11,7 +11,7 @@ import pandas as pd
 
 from PIL import Image
 
-image = Image.open('C:/Users/kenny/Dropbox/Soccermatics/Project_code/Griezmann_project/statsbomb_image.png') 
+#image = Image.open('C:/Users/kenny/Dropbox/Soccermatics/Project_code/Griezmann_project/statsbomb_image.png') 
 
 #st.sidebar.image(image, use_column_width=True)
 
